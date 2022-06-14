@@ -26,39 +26,37 @@ api.interceptors.response.use(
     return response;
   },
   (error: AxiosError<AxiosErrorResponse>) => {
-    if (error.response?.status === 401) {
-      if (error.response?.data?.code === "token.expired") {
+    if (error.response.status === 401) {
+      if (error.response.data?.code === "token.expired") {
         cookies = parseCookies();
 
         const { "nextauth.refreshToken": refreshToken } = cookies;
         const originalConfig = error.config;
-        console.log(isRefreshing)
+       
         if (!isRefreshing) {
             isRefreshing = true;
 
-            api.post("/refreshToken", { refreshToken }).then((response) => {
-                console.log('a')
-                console.log(response);
-                // const { token } = response.data;
+            api.post("/refresh", { refreshToken }).then((response) => {
+                const { token } = response.data;
       
-                // setCookie(undefined, "nextauth.token", token, {
-                //   maxAge: 60 * 60 * 24 * 30, // 30 days
-                //   path: "/",
-                // });
+                setCookie(undefined, "nextauth.token", token, {
+                  maxAge: 60 * 60 * 24 * 30, // 30 days
+                  path: "/",
+                });
       
-                // setCookie(
-                //   undefined,
-                //   "nextauth.refreshToken",
-                //   response.data.refreshToken,
-                //   {
-                //     maxAge: 60 * 60 * 24 * 30, // 30 days
-                //     path: "/",
-                //   }
-                // );
+                setCookie(
+                  undefined,
+                  "nextauth.refreshToken",
+                  response.data.refreshToken,
+                  {
+                    maxAge: 60 * 60 * 24 * 30, // 30 days
+                    path: "/",
+                  }
+                );
       
-                // api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+                api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-                // failedRequestQueue.forEach(request => request.resolve(token))
+                failedRequestQueue.forEach(request => request.resolve(token))
             }).catch((err) => {
                 failedRequestQueue.forEach(request => request.reject(err))
                 failedRequestQueue = [];
