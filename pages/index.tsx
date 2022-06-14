@@ -1,12 +1,13 @@
-import type { GetServerSideProps, NextPage } from 'next'
-import { parseCookies } from 'nookies';
-import { FormEvent, useContext, useState } from 'react'
-import { AuthContext } from '../contexts/AuthContext';
-import styles from '../styles/Home.module.css'
+import type { GetServerSideProps, NextPage } from "next";
+import { parseCookies } from "nookies";
+import { FormEvent, useContext, useState } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+import styles from "../styles/Home.module.css";
+import { withSSRGuest } from "../utils/withSSRGuest";
 
 const Home: NextPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const { signIn } = useContext(AuthContext);
 
@@ -14,37 +15,34 @@ const Home: NextPage = () => {
     event.preventDefault();
 
     const data = {
-      email, 
+      email,
       password,
-    }
+    };
 
-    await signIn(data)
+    await signIn(data);
   }
 
   return (
     <form onSubmit={handleSubmit} className={styles.container}>
-      <input type="email" value={email} onChange={e => setEmail(e.target.value)}/>
-      <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
       <button type="submit">Entrar</button>
     </form>
-  )
-}
+  );
+};
 
 export default Home;
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const cookies = parseCookies(ctx);
-
-  if (cookies['nextauth.token']) {
-    return {
-      redirect: {
-        destination: '/dashboard',
-        permanent: false,
-      }
-    }
-  }
-
+export const getServerSideProps = withSSRGuest(async (ctx) => {
   return {
-    props: {}
-  }
-}
+    props: {},
+  };
+});
