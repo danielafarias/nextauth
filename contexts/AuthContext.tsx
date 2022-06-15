@@ -51,6 +51,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       switch (message.data) {
         case 'signOut':
           signOut();
+          authChannel.close(); 
           break;
         default:
           break;
