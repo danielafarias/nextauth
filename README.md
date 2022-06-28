@@ -1,34 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NEXTAUTH
 
-## Getting Started
+![GitHub repo size](https://img.shields.io/github/repo-size/danielafarias/nextauth?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/danielafarias/nextauth?style=for-the-badge)
+![GitHub forks](https://img.shields.io/chocolatey/dt/nextauth?style=for-the-badge)
+![Bitbucket open issues](https://img.shields.io/bitbucket/issues/danielafarias/nextauth?style=for-the-badge)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/danielafarias/nextauth?style=for-the-badge)
+![Github Watchers](https://img.shields.io/github/watchers/danielafarias/nextauth?style=for-the-badge)
 
-First, run the development server:
+![nextauth](https://raw.githubusercontent.com/tavareshenrique/ignite-reactjs/a11afefe824866f24dd3f9e1cc6e6e9530376ad1/%40assets/img/logo.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
+
+> nextauth é o exemplo prático das aulas de autenticação do Chapter IV da Rocketseat Ignite.
+
+### ❤️ Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [x] Projeto inicializado
+- [x] Projeto Finalizado
+
+## 💻 Tecnologias
+
+Foram usadas as seguintes tecnologias:
+
+- ReactJS;
+- NextJS;
+- TypeScript;
+- Axios;
+- Nookies;
+- jwt-decode;
+- NextAuth;
+
+
+## 🚀 Instalando `<nextauth>`
+
+Para instalar o `<nextauth>`, siga estas etapas:
+
+Clone o projeto:
+```
+<git clone https://github.com/danielafarias/nextauth.git>
+```
+Em seguida, adicione as bibliotecas e dependências necessárias:
+```
+<cd nextauth>
+```
+```
+<yarn>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🧑‍💻 Usando `<nextauth>`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Para usar `<nextauth>`:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+<yarn dev>
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 💌 Contribuindo para `<nextauth>`
 
-## Learn More
+Para contribuir com `<nextauth>`, siga estas etapas:
 
-To learn more about Next.js, take a look at the following resources:
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b <nextauth_seu_nome>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<sua_mensagem_de_commit>'`
+4. Envie para o branch original: `git push origin <master> / <https://github.com/danielafarias/nextauth.git>`
+5. Crie a solicitação de pull.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🤝 Colaboradores
 
-## Deploy on Vercel
+Seguintes pessoas que contribuíram para este projeto:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/danielafarias">
+        <img src="https://avatars.githubusercontent.com/u/79869120?v=4" width="100px;" alt="Foto da Daniela Farias no GitHub"/><br>
+        <sub>
+          <b>Daniela Farias</b>
+        </sub>
+      </a>
+    </td>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  </tr>
+</table>
+
+## 📃 Licença
+
+Esse projeto está sob licença MIT ⚖️. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+
+[⬆ Voltar ao topo](#nextauth)<br>
+
+```
+© README.md template by iuricode
+```
